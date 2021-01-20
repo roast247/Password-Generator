@@ -1,4 +1,4 @@
 # Password-Generator
-<center>A very simple password generator
+A very simple password generator
 
-<img src="https://raw.githubusercontent.com/roast247/Password-Generator/main/PassGen.png"></center>
+<img src="https://raw.githubusercontent.com/roast247/Password-Generator/main/PassGen.png">
