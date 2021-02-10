@@ -48,7 +48,7 @@ namespace Password_Generator
         private Point lastLocation;
 
         //c# text generator
-        private void BtnGenerate_Click_1(object sender, EventArgs e)
+        private void BtnGenerate_Click(object sender, EventArgs e)
         {
             try
             {
@@ -140,6 +140,15 @@ namespace Password_Generator
         private void Mup(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+        }
+
+        private void txtPasswordLength_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtPasswordLength.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.");
+                txtPasswordLength.Text = txtPasswordLength.Text.Remove(txtPasswordLength.Text.Length - 1);
+            }
         }
     }
 }

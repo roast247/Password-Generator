@@ -39,7 +39,6 @@ namespace Password_Generator
             this.txtPasswordLength = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.BtnGenerate = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -48,6 +47,7 @@ namespace Password_Generator
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.BtnGenerate = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -120,6 +120,7 @@ namespace Password_Generator
             this.txtPasswordLength.Name = "txtPasswordLength";
             this.txtPasswordLength.Size = new System.Drawing.Size(36, 20);
             this.txtPasswordLength.TabIndex = 6;
+            this.txtPasswordLength.TextChanged += new System.EventHandler(this.txtPasswordLength_TextChanged);
             // 
             // txtPassword
             // 
@@ -142,20 +143,6 @@ namespace Password_Generator
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Options";
-            // 
-            // BtnGenerate
-            // 
-            this.BtnGenerate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnGenerate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSpringGreen;
-            this.BtnGenerate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSpringGreen;
-            this.BtnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGenerate.Location = new System.Drawing.Point(78, 229);
-            this.BtnGenerate.Name = "BtnGenerate";
-            this.BtnGenerate.Size = new System.Drawing.Size(138, 23);
-            this.BtnGenerate.TabIndex = 9;
-            this.BtnGenerate.Text = "Generate Password";
-            this.BtnGenerate.UseVisualStyleBackColor = true;
-            this.BtnGenerate.Click += new System.EventHandler(this.BtnGenerate_Click_1);
             // 
             // panel1
             // 
@@ -265,6 +252,18 @@ namespace Password_Generator
             this.panel4.Size = new System.Drawing.Size(5, 235);
             this.panel4.TabIndex = 13;
             // 
+            // BtnGenerate
+            // 
+            this.BtnGenerate.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Alternate;
+            this.BtnGenerate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGenerate.Location = new System.Drawing.Point(78, 228);
+            this.BtnGenerate.Name = "BtnGenerate";
+            this.BtnGenerate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue;
+            this.BtnGenerate.Size = new System.Drawing.Size(147, 25);
+            this.BtnGenerate.TabIndex = 14;
+            this.BtnGenerate.Values.Text = "Generate Password";
+            this.BtnGenerate.Click += new System.EventHandler(this.BtnGenerate_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,11 +271,11 @@ namespace Password_Generator
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(293, 264);
             this.ControlBox = false;
+            this.Controls.Add(this.BtnGenerate);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.BtnGenerate);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtPasswordLength);
             this.Controls.Add(this.label2);
@@ -309,7 +308,6 @@ namespace Password_Generator
         private System.Windows.Forms.TextBox txtPasswordLength;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button BtnGenerate;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Minimize;
         private System.Windows.Forms.Button Exit;
@@ -318,6 +316,7 @@ namespace Password_Generator
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton BtnGenerate;
     }
 }
 
